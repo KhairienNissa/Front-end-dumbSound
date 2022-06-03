@@ -2,111 +2,107 @@ import React, { useState, useEffect } from "react";
 import { Alert } from 'react-bootstrap'
 import { API } from "../../config/api";
 import NavbarAdmin from '../../components/navbar/NavbarAdmin';
-
+import axios from "axios";
+import { useMutation } from "react-query";
+const API = axios.create({
+    baseURL: process.env.REACT_APP_SERVER_URL ||
+    "https://dumbsound-khairien.herokuapp.com/api/v1" ||
+    "http://localhost:5000/api/v1",
+});
 
 
 function AddMusic() {
-  const desc = "Add Music";
-  document.title = "Dumbsound | " + desc;
+    const desc = "Add Music";
+    document.title = "Dumbsound | " + desc;
 
-  
-  const api = API()
+    const [message, setMessage] = useState(null);
+    const [artiss, setArtiss] = useState([])
+    
+    // find artis
+    const optionArtis = async () => {
+        try {
+            const response = await API.get(`/artiss`)
+            console.log(response);
+            setArtiss (response.data.data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        optionArtis()
+    }, [])
 
-  const [message, setMessage] = useState(null);
-  const [artiss, setArtiss] = useState([])
-  
-  // find artis
-  const optionArtis = async () => {
-      try {
-          const response = await api.get(`/artiss`)
-          setArtiss (response.data)
-      } catch (error) {
-          console.log(error);
-      }
-  }
-  useEffect(() => {
-      optionArtis()
-  }, [])
+    const [form, setForm] = useState({
+        title: '',
+        year: '',
+        thumbnail: '',
+        attache: '',
+        idArtis: ''
+    })
 
-  const [form, setForm] = useState({
-      title: '',
-      year: '',
-      thumbnail: '',
-      attache: '',
-      idArtis: ''
-  })
+    const [preview, setPreview] = useState('')
 
-  const [preview, setPreview] = useState('')
+    const { title, year, thumbnail, attache, idArtis } = form
 
-  const { title, year, thumbnail, attache, idArtis } = form
-
-  const handleChange = (e) => {
-      setForm({
+    const handleChange = (e) => {
+        setForm({
           ...form,
-          [e.target.name]: e.target.id === "attache" ? e.target.files : e.target.value && e.target.id === "thumbnail" ? e.target.files : e.target.value,
-      });
-
-      if (e.target.id === "input-file") {
-          let url = URL.createObjectURL(e.target.files[0])
-          setPreview(url)
-          console.log(url)
+          [e.target.name] : e.target.id === "attache" ? e.target.files : e.target.value && e.target.id === "thumbnail"? e.target.files:e.target.value
+        })
       }
-  }
 
-  const handleSubmit = async () => {
-      try {
-
-          // Configuration
-
-          // Store data with FormData as object
-          const formData = new FormData()
-          formData.set("title", form.title)
-          formData.set("year", form.year)
-          formData.set("fileSong", form.attache[0], form.attache[0].name)
-          formData.set("imageSong", form.thumbnail[0], form.thumbnail[0].name)
-          formData.set("idArtis", form.idArtis)
-
-          const config = {
-              method: 'POST',
-              headers: {
-                  Authorization: "Basic " + localStorage.token,
-              },
-              body: formData
+    const handleSubmit = useMutation(async (e) => {
+        try {
+            e.preventDefault();
+            // Configuration
+            const config = {
+                headers: {
+                    'Content-type': 'multipart/form-data',
+                },
             };
-          
-          // Insert product data
-          const response = await api.post('/music', config)
+            console.log(form);
+            // Store data with FormData as object
+            const formData = new FormData()
+            formData.set("title", form.title)
+            formData.set("year", form.year)
+            formData.set("attache", form.attache[0], form.attache[0].name)
+            formData.set("thumbnail", form.thumbnail[0], form.thumbnail[0].name)
+            formData.set("idArtis", form.idArtis)
+            
+            // Insert product data
+            const response = await API.post('/music', formData, config)
+            console.log(response);
 
-          // if success
-          if (response.status == 'success') {
-              const alert = (
-                  <Alert variant="success" className="py-1 text-center m-auto w-20 mt-5">
-                      Success add Music
-                  </Alert>
-              );
-              // make it clear after succes submit
-              setForm({
-                  title: '',
-                  year: '',
-                  thumbnail: '',
-                  attache: '',
-                  idArtis: ''
-              })
+            // if success
+            if (response?.data.status == 'success') {
+                const alert = (
+                    <Alert variant="success" className="py-1 text-center m-auto w-20 mt-5">
+                        Success add Music
+                    </Alert>
+                );
+                // make it clear after succes submit
+                setForm({
+                    title: '',
+                    year: '',
+                    thumbnail: '',
+                    attache: '',
+                    idArtis: ''
+                })
 
-              setMessage(alert)
-          } else {
-              const alert = (
-                  <Alert variant="danger" className="py-1">
-                      {response.message}
-                  </Alert>
-              );    
-              setMessage(alert);
-          }
+                setMessage(alert)
+            } else {
+                const alert = (
+                    <Alert variant="danger" className="py-1">
+                        {response.data.message}
+                    </Alert>
+                );    
+                setMessage(alert);
+            }
 
-      } catch (error) {
-          console.log(error);
-      }
-  };
+        } catch (error) {
+            console.log(error);
+        }
+    });
   return (
     // Code Here
     <div>
@@ -119,9 +115,7 @@ function AddMusic() {
               <h3 style={{marginLeft: "50px"}}>Add Music</h3>
                {message} 
                
-               <form onSubmit={(e) => {
-                    e.preventDefault()
-                     handleSubmit()}}>
+               <form onSubmit={(e) => handleSubmit.mutate(e)}>
            <div className="row mx-4 mt-3" style={{paddingLeft: "11px", paddingRight: "11px"}}>
             
                <div className="col-8">

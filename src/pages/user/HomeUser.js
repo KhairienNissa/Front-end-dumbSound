@@ -55,7 +55,7 @@ useEffect(() => {
      <NavbarUser/>  
       <ContainerImg/>
       <h3 className="Rasakan">Dengarkan Dan Rasakan</h3>
-      <div className="row mx-4 justify-content-center">
+      <div className="mx-sm-5 mx-3 borra-4 d-flex gap-3 justify-content-center flex-1 flex-wrap">
       {userTrans === null || userTrans?.status === "pending" ?
        <>
        {music? 
@@ -77,7 +77,7 @@ useEffect(() => {
              <>
               {userTrans?.status === "success" &&
                <>
-                 <div className="row mx-4 justify-content-center">
+                 <div className="mx-sm-5 mx-3 borra-4 d-flex gap-4 justify-content-center flex-1 flex-wrap">
                {music?
                 music.map((item) => {
              return (

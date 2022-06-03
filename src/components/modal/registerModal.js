@@ -137,7 +137,7 @@ function RegisterModal() {
               </Form.Group>
 
               <Form.Group
-                className="mb-3"
+                className="mb-2"
                 controlId="exampleForm.ControlTextarea1" >
               <Form.Control
               className='inputText' value={fullName} onChange={HandleOnChange}
@@ -150,10 +150,10 @@ function RegisterModal() {
               <Form.Group
                 className="mb-3 "
                 controlId="exampleForm.ControlTextarea1" >
-            <select   style={{color:"white"}} name="gender" className="inputText">
-                  <option style={{color:"white"}}  selected hidden>Gender</option>
-              <option style={{color:"white"}} value="volvo">Laki-Laki</option>
-              <option  style={{color:"white"}} value="saab">Perempuan</option>
+            <select   style={{color:"#c8c1c1" }} name="gender" className="inputGender">
+                  <option style={{color:"#c8c1c1"}}  selected hidden>Gender</option>
+              <option style={{color:"#c8c1c1"}} value="volvo">Laki-Laki</option>
+              <option  style={{color:"#c8c1c1"}} value="saab">Perempuan</option>
               
             </select>
               </Form.Group>

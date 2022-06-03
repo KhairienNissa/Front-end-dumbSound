@@ -1,12 +1,9 @@
 import React from "react";
 import frame from '../../assets/logoD.png'
 import DumbSOUND from '../../assets/DUMBSOUND.png'
-import { isLogin } from "../../config/isLogin";
 import jungkook from '../../assets/jungkook.jpeg';
 import LoginModal from "../modal/loginModal";
 import RegisterModal from "../modal/registerModal";
-
-
 
 
 function Navbar() {

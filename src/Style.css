@@ -7,7 +7,7 @@ body {
 .banner-image {
     background-image: url('../src/assets/navbar.png');
     background-size: cover;
-    height: 70vh;
+    height: 60vh;
  
   }
 .banner-notfound {
@@ -65,9 +65,18 @@ body {
     height: 50px;
     border: 3px solid white;
 }
+.inputGender {
+    margin-top: 10px;
+    background-color: rgb(82, 82, 82) !important;
+    width: 406px;
+    border: #181818;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
 .btnModal {
     background-color: #EE4622  !important;
-    width: 400px;
+    width: 406px;
     border-color: #EE4622 !important;
     height: 50px;
 } 
@@ -158,7 +167,7 @@ body {
 }
 
 .ComplainContainer {
-  margin-top: 90px;
+  margin-top: 110px;
 
 }
 
@@ -356,3 +365,260 @@ body {
 .zoom-out {cursor: zoom-out;}
 .auto {cursor: auto;}
 .cell {cursor: cell;}
+
+/* ============component========= */
+/* background */
+
+
+
+/* letter-spacing */
+.ls-3 {
+  letter-spacing: 2px;
+}
+
+/* font weight */
+.fw-300{
+  font-weight: 300;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fw-800 {
+  font-weight: 800;
+}
+.fw-900 {
+  font-weight: 900;
+}
+.fw-small {
+  font-weight: lighter !important;
+}
+.font-pt {
+  font-family: 'PT Sans', sans-serif !important;
+}
+
+/* font-size */
+.fs-7 {
+  font-size: 14px !important;
+}
+.fs-8 {
+  font-size: 12px !important;
+}
+.fs-9 {
+  font-size: 9px !important;
+  font-weight: lighter !important;
+}
+.fs-0 {
+  font-size: 48px;
+}
+.fs-sans {
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* border radius */
+.borra-2 {
+  border-radius: .25rem;
+}
+.borra-3 {
+  border-radius: 8px !important;
+}
+.borra-4 {
+  border-radius: 10px !important;
+}
+.border-btm {
+  border-bottom: 2px solid #A8A8A8 !important;
+}
+.border-none {
+  border: none !important;
+}
+.borra-form {
+  border-radius: 0px 0px 5px 5px !important;
+}
+
+/* flex */
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.height-30 {
+  height: 50vh !important;
+}
+
+
+.height-90 {
+  height: 90vh;
+}
+.mb-6 {
+  margin-bottom: 60px;
+}
+.m-x {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.p-10 {
+  padding: 0 20%;
+}
+.p-x {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.px-15 {
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+}
+.h-80 {
+  height: 80vh;
+}
+
+/* Start */
+/* login */
+.form-login {
+  width: 400px;
+}
+
+.w-80 {
+  width: 80%;
+}
+.w-20 {
+  width: 20% !important;
+}
+.w-30 {
+  width: 30% !important;
+}
+.w-45 {
+  width: 45px !important;
+}
+.h-1 {
+  height: 35vh;
+}
+.h-70 {
+  height: 75vh !important;
+}
+
+/* dropdown user */
+.triangle {
+  width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 20px solid #3A3A3A;
+  margin-left: 25px;
+}
+
+.drop-user {
+  width: 110px;
+}
+
+.triangle-admin {
+  width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 20px solid #3A3A3A;
+  margin-left: 25px;
+}
+.drop-admin {
+  width: 150px;
+}
+
+/* Home */
+.home-container {
+  height: 110vh;
+  box-sizing: border-box;
+}
+/* card */
+.card {
+  width: 200px;
+  border-radius: 10px !important;
+}
+
+/* .home-img {
+  background-image: url(./assets/Jumbotron.svg);
+  background-size: 100%;
+  object-fit: contain;
+} */
+
+/* transaction */
+.transaction-container {
+  height: 93vh;
+}
+
+/* music player */
+.navplay {
+  background-color: rgba(46, 45, 45, .8);
+  height: 80px;
+}
+.rhap_container {
+  background: transparent !important;
+  box-shadow: none  !important;
+}
+.rhap_progress-indicator,
+.rhap_volume-filled,
+.rhap_volume-indicator {
+  background: #EE4622 !important;
+}
+.rhap_download-progress,
+.rhap_volume-bar {
+  background-color: #c5c5c5 !important;
+}
+.rhap_progress-filled {
+  background-color: #EE4622 !important;
+}
+.rhap_additional-controls {
+  display: none !important;
+}
+.rhap_time,
+.rhap_time,
+.rhap_main-controls-button,
+.rhap_volume-button {
+  color: #fff !important;
+}
+.rhap_main {
+  flex-direction: row !important;
+  position: relative;
+  right: 13%;
+  margin-top: 8px;
+  width: 60%;
+}
+.rhap_stacked .rhap_controls-section {
+  margin-top: 0 !important;
+  margin-bottom: 40px;
+}
+.rhap_volume-controls {
+  justify-content: flex-start !important;
+  margin-left: 30px;
+  flex: 1 1;
+}
+.rhap_controls-section {
+  position: absolute;
+  left: 105%;
+  top: -13px;
+}
+.rhap_volume-bar {
+  width: 100px !important;
+}
+.rhap_progress-section {
+  width: 30px !important;
+}
+
+
+/* additional */
+

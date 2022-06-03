@@ -4,7 +4,6 @@ import Navbar from "../components/navbar/Navbar";
 import ContainerImg from "../components/containerImg";
 import CardLagu from "../components/card";
 import NavbarUser from "../components/navbar/NavbarUser";
-import {isLogin} from '../config/isLogin'
 import { dataLagu } from "../fakeData/dataLagu";
 import { API } from "../config/api";
 import { UserContext } from "../context/userContext";
@@ -57,7 +56,7 @@ function Home() {
       </Alert>
       <h3 className="Rasakan">Dengarkan Dan Rasakan</h3>
       <a onClick={() => setShow(true)}>
-<div className="row mx-4 justify-content-center">
+<div className="mx-sm-5 mx-3 borra-4 d-flex gap-3 justify-content-center flex-1 flex-wrap">
 {music?.map((item) => {
              return <CardLagu item={item} />
                  })} 
