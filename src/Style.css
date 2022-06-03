@@ -10,6 +10,12 @@ body {
     height: 70vh;
  
   }
+.banner-notfound {
+    background-image: url('../src/assets/notfound.jpg');
+    background-size: cover;
+    height: 80vh;
+ 
+  }
 .btnlogin {
     background-color: transparent;
     width: 120px;
@@ -21,8 +27,8 @@ body {
     font-size: 15px;
 }
 .btnRegis {
-    background-color: #EE4622;
-    border: #EE4622;
+    background-color: #EE4622 !important;
+    border: #EE4622 !important;
     width: 120px;
     height: 35px;
     color: white;
@@ -148,5 +154,205 @@ body {
 }
 
 .textLink {
-    text-decoration: none;
+    text-decoration: none !important;
 }
+
+.ComplainContainer {
+  margin-top: 90px;
+
+}
+
+.kolom-kiri {
+    width: 360px !important;
+    height: 580px;
+    background-color: #252525;
+    /* border:  5px solid #ecd7b1; */
+    margin-right: 10px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.kolom-kanan {
+    width: 500px !important;
+    height: 580px;
+    background-color: #252525;
+    /* border:  5px solid #ecd7b1;  */
+    border-radius: 15px;
+}
+
+.img-contact {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover !important;
+  }
+  
+  .img-chat {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+  }
+  
+  .text-contact {
+    font-size: 14px;
+  }
+  
+  .text-contact-chat {
+    color: #ababab;
+  }
+  
+  .contact {
+    display: flex;
+    align-items: center;
+  }
+  .contact img {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  
+  .contact ul {
+    list-style-type: none;
+  }
+  
+  .contact:hover {
+    background-color: #212121;
+    transition: 0.5s;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact:active {
+    background-color: #3d3d3d;
+    transition: 0.3s;
+  }
+  
+  .contact-active {
+    background-color: #212121;
+    border-radius: 5px;
+  }
+  
+  .input-message {
+    width: 100%;
+    height: 90%;
+    background: #535353;
+    border: none;
+    color: #fcfcfc;
+    border-radius: 10px;
+    
+  }
+  
+  .chat-me {
+    position: relative;
+    background: #EE4622;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    max-width: 300px;
+  }
+  
+  .chat-me::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    border-top: 15px solid transparent;
+    border-left: 20px solid #EE4622;
+    border-bottom: 15px solid transparent;
+  }
+  .chat-other {
+    position: relative;
+    background: #6d634d;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    max-width: 300px;
+  }
+  
+  .chat-other::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -15px;
+    border-top: 15px solid transparent;
+    border-right: 20px solid #6d634d;
+    border-bottom: 15px solid transparent;
+  }
+
+  /* music player */
+  
+  .navplay {
+    background-color: #2E2D2D;
+    height: 80px;
+}
+.rhap_container {
+    background: transparent !important;
+    box-shadow: none  !important;
+}
+.rhap_progress-indicator,
+.rhap_volume-filled,
+.rhap_volume-indicator {
+    background: #EE4622 !important;
+}
+.rhap_download-progress,
+.rhap_volume-bar {
+    background-color: #c5c5c5 !important;
+}
+.rhap_progress-filled {
+    background-color: #EE4622 !important;
+}
+.rhap_additional-controls {
+    display: none !important;
+}
+.rhap_time,
+.rhap_time,
+.rhap_main-controls-button,
+.rhap_volume-button {
+    color: #fff !important;
+}
+.rhap_main {
+    flex-direction: row !important;
+    position: relative;
+    right: 27%;
+    margin-top: 30px;
+    width: 80%;
+}
+.rhap_stacked .rhap_controls-section {
+    margin-top: 0 !important;
+    margin-bottom: 40px;
+}
+.rhap_volume-controls {
+    justify-content: flex-start !important;
+    margin-left: 30px;
+    flex: 1 1;
+}
+.rhap_controls-section {
+    position: absolute;
+    left: 105%;
+    top: -25px;
+}
+.rhap_volume-bar {
+    width: 100px !important;
+}
+
+.text-green {
+  color: green !important;
+}
+
+.text-red {
+  color : red !important
+}
+
+.text-yellow {
+  color : yellow !important
+}
+
+.pointer {cursor: pointer;}
+
+.zoom-in {cursor: zoom-in;}
+.zoom-out {cursor: zoom-out;}
+.auto {cursor: auto;}
+.cell {cursor: cell;}

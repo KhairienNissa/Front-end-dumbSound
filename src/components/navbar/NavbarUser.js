@@ -1,13 +1,25 @@
-import React from "react";
+import React, {useContext} from 'react'
 import frame from '../../assets/logoD.png'
 import DumbSOUND from '../../assets/DUMBSOUND.png'
 import { isLogin } from "../../config/isLogin";
 import jungkook from '../../assets/jungkook.jpeg'
 import { NavLink, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../context/userContext';
 
 
 
 function NavbarUser() {
+  const [state, dispatch] = useContext(UserContext)
+  const navigate = useNavigate()
+
+  //logout and remove token
+  const logout = () => {
+      dispatch({
+          type: "LOGOUT"
+      })
+      navigate("/auth")
+  }
+  
   return (
     // Code Here
     <div>
@@ -36,10 +48,11 @@ function NavbarUser() {
           <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src={jungkook} width='55px' className="rounded-circle border border-3 border-light"/>
           </a>
-          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-         <li  style={{  borderBottom: '3px solid #EE4622', padding: "7px"}} > <NavLink class="dropdown-item textLink"  to="/transaksi-premium" style={{color: "#EE4622"}} exact>Pay</NavLink> </li>
-            <li  style={{  borderBottom: '3px solid #EE4622', padding: "7px"}} ><NavLink class="dropdown-item textLink" to='/home' style={{color: "#EE4622"}} exact>Complain</NavLink></li>
-            <li  style={{  padding: "7px"}} ><NavLink class="dropdown-item textLink" style={{color: "#EE4622"}} href="#" to='/' exact>Logout</NavLink></li>
+          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink" style={{borderRadius:"16px"}}>
+         <li  style={{  borderBottom: '3px solid #EE4622', padding: "7px"}} > <a class="dropdown-item textLink pointer"  onClick={()=> navigate("/home")} style={{color: "#EE4622"}}>Home</a> </li>
+         <li  style={{  borderBottom: '3px solid #EE4622', padding: "7px"}} > <a class="dropdown-item textLink pointer"  onClick={()=> navigate("/transaksi-premium")} style={{color: "#EE4622"}}>Premium</a> </li>
+            <li  style={{  borderBottom: '3px solid #EE4622', padding: "7px"}} ><a class="dropdown-item textLink pointer" onClick={()=> navigate("/complain-user")} style={{color: "#EE4622"}} >Complain</a></li>
+            <li  style={{  padding: "7px"}} ><a class="dropdown-item textLink pointer" style={{color: "#EE4622"}} onClick={logout} >Logout</a></li>
           </ul>
         </li>
 

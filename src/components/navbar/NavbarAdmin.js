@@ -1,13 +1,22 @@
-import React from "react";
+import React, {useContext} from 'react'
 import frame from '../../assets/logoD.png'
 import DumbSOUND from '../../assets/DUMBSOUND.png'
 import { isLogin } from "../../config/isLogin";
 import jungkook from '../../assets/jungkook.jpeg';
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import { UserContext } from '../../context/userContext';
 
 
 function NavbarAdmin() {
+
+  const [state, dispatch] = useContext(UserContext)
+    const navigate = useNavigate()
+    const logout = () => {
+      dispatch({
+          type: "LOGOUT"
+      })
+      navigate("/")
+  }
   return (
     // Code Here
     <div>
@@ -38,10 +47,11 @@ function NavbarAdmin() {
           </a>
           <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink" style={{borderRadius : "10px"}}>
             <li style={{  borderBottom: '3px solid #EE4622',  padding: "7px"}}>
-              <NavLink class="dropdown-item"  to="/add-music" style={{color: "#EE4622"}} exact>Add Music</NavLink> </li>
-            <li style={{  borderBottom: '3px solid #EE4622', padding: "7px"}}> <NavLink class="dropdown-item textLink" style={{color: "#EE4622"}} to="/add-artis" exact>Add Artis</NavLink> </li>
-            <li style={{  borderBottom: '3px solid #EE4622',   padding: "7px"}}> <NavLink class="dropdown-item textLink" style={{color: "#EE4622"}} to="/add-music" exact>Complain</NavLink> </li>
-            <li style={{  padding: "7px"}}><NavLink class="dropdown-item textLink" href="#"  style={{  color: "#EE4622"}} to="/" exact>Logout</NavLink></li>
+              <a class="dropdown-item pointer"  onClick={()=> navigate("/add-music")} style={{color: "#EE4622"}} >Add Music</a> </li>
+            <li style={{  borderBottom: '3px solid #EE4622', padding: "7px"}}> <a class="dropdown-item textLink pointer" style={{color: "#EE4622"}} onClick={()=> navigate("/list-transaction")}>List User</a> </li>
+            <li style={{  borderBottom: '3px solid #EE4622', padding: "7px"}}> <a class="dropdown-item textLink pointer" style={{color: "#EE4622"}} onClick={()=> navigate("/add-artis")}>Add Artis</a> </li>
+            <li style={{  borderBottom: '3px solid #EE4622',   padding: "7px"}}> <a class="dropdown-item textLink  pointer" style={{color: "#EE4622" }} onClick={()=> navigate("/complain-admin")} >Complain</a> </li>
+            <li style={{  padding: "7px"}}><a class="dropdown-item textLink pointer" href="#"  style={{  color: "#EE4622"}} onClick={logout}>Logout</a></li>
           </ul>
         </li>
 

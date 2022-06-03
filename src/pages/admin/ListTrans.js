@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NavbarAdmin from '../../components/navbar/NavbarAdmin';
 import { Transaksi } from "../../fakeData/transaksi";
 import TableTrans from "../../components/table/tableTrans";
+import {API} from '../../config/api';
+import { UserContext } from "../../context/userContext";
 
 
 function ListTrans() {
+    let api = API()
+    
+    const [state, dispatch] = useContext(UserContext)
+    const [users, setUsers] = useState()
+
+    const getUsers = async () => {
+        const config = {
+            method: 'GET',
+            headers: {
+                Authorization: "Basic " + localStorage.token,
+            } 
+        };
+        const response = await api.get('/users', config)
+        setUsers(response.getData)
+    }
+    console.log(users);
+    useEffect(() => {
+        getUsers()
+    }, [])
+    
+
   return (
     // Code Here
     <div>
@@ -26,15 +49,15 @@ function ListTrans() {
                                 <tr>
                                 <th  scope="col">No</th>
                                 <th scope="col">Users</th>
-                                <th scope="col">Remaining Active</th>
+                               
                                 <th scope="col">Status User</th>
                                 <th scope="col">Status Payment</th>
                                 </tr>
                             </thead>
                             <tbody> 
-                            {Transaksi?.map((item, index) => {
+                            {users?.map((user, index) => {
                                     return (
-                                    <TableTrans item={item} key={index}/>
+                                    <TableTrans user={user} index={index}/>
                                     )
                                 })}
                                 
