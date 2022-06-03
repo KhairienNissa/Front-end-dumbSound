@@ -18,7 +18,7 @@ export default function Complain() {
 
     const [state, dispatch] = useContext(UserContext)
     useEffect(() =>{
-        socket = io('http://localhost:5000', {
+        socket = io('https://dumbsound-khairien.herokuapp.com', {
             auth: {
                 token: localStorage.getItem("token")
             },
@@ -124,16 +124,6 @@ export default function Complain() {
             </div>
 
 
-            {/* <Container fluid  className="ComplainContainer d-flex justify-content-center">
-                <Row className="kolom-chat">
-                    <Col md={3} style={{height: '89.5vh'}} className="border-end border-dark overflow-auto">
-                        <Contact dataContact={dataContact}  setContact={setContact} contact={contact} />
-                    </Col>
-                    <Col md={9} style={{maxHeight: '89.5vh'}} className="px-0">
-                        <Chat contact={contact} />
-                    </Col>
-                </Row>
-            </Container> */}
         </>
     )
 }

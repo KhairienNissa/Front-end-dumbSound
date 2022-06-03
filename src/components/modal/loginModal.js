@@ -68,9 +68,9 @@ function LoginModal() {
   
           // Status check
           if (response.data.status === 'admin') {
-            navigate('/list-transaction');
+            navigate("/list-transaction");
           } else {
-            setTimeout(() => navigate("/home"), 2000)
+            navigate("/home");
           }
   
           const alert = (

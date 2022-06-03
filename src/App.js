@@ -33,7 +33,7 @@ function App() {
       navigate("/");
     } else {
       if (state.user.status === "admin") {
-        navigate("/list-transaction");
+        navigate("/add-music");
       } else if (state.user.status === "user") {
         navigate("/home");
       }
@@ -88,9 +88,9 @@ function App() {
     <Route exact path='/transaksi-premium' element={<Transaksi/>} />
     <Route exact path='/list-transaction' element={<ListTrans/>} />
     <Route exact path='/add-music' element={<AddMusic/>} />
-    <Route path='/Add-artis'  element={<AddArtis/>}/>
+    <Route exact path='/Add-artis'  element={<AddArtis/>}/>
     <Route exact path='/complain-admin' element={<ComplainAdmin/>} />
-    <Route path='/complain-user'  element={<Complain/>}/>
+    <Route exact path='/complain-user'  element={<Complain/>}/>
     {/* </Route> */}
 </Routes>
   );
