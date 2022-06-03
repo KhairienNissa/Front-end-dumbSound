@@ -42,6 +42,7 @@ useEffect(() =>{
         socket.emit("load messages", contact?.id)
     })
 
+    
     // code here
     loadContacts()
     loadMessages()
