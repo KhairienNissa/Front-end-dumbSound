@@ -84,7 +84,7 @@ function RegisterModal() {
               address: ""
           });
           setMessage(alert);
-          setTimeout(() => navigate("/home"), 2000)
+        
           
         } else {
           const alert = (
