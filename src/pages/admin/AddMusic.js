@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Alert } from 'react-bootstrap'
-import { API } from "../../config/api";
 import NavbarAdmin from '../../components/navbar/NavbarAdmin';
 import axios from "axios";
 import { useMutation } from "react-query";
+
 const API = axios.create({
     baseURL: process.env.REACT_APP_SERVER_URL ||
     "https://dumbsound-khairien.herokuapp.com/api/v1" ||
