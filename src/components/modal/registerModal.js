@@ -162,9 +162,9 @@ function RegisterModal() {
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1" >
               <Form.Control
-              className='inputText'
-              name= "phone"
-                  type="number"
+                  className='inputText'
+                  name= "phone"
+                  type="text"
                   placeholder="Phone" value={phone}
                   autoFocus onChange={HandleOnChange}/>
               </Form.Group>
@@ -173,8 +173,8 @@ function RegisterModal() {
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1" >
               <Form.Control
-              className='inputText'
-              name= "address"
+                  className='inputText'
+                  name= "address"
                   type="text"
                   placeholder="Address"
                   autoFocus value={address} onChange={HandleOnChange}/>
