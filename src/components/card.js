@@ -2,7 +2,7 @@ import React from 'react';
 // import { Card, ListGroup,ListGroupItem, } from 'react-bootstrap';
 import Lagu1 from '../assets/lagu1.png'
 
-const path = "https://res.cloudinary.com/khairien/image/upload/v1654314866/" || "http://localhost:5000/uploads/"
+const path = "https://res.cloudinary.com/khairien/image/upload/v1654335135/" || "http://localhost:5000/uploads/"
 
 // import { Table } from 'react-bootstrap';
 

@@ -6,7 +6,7 @@ import { useMutation } from "react-query";
 
 const API = axios.create({
     baseURL:   process.env.REACT_APP_SERVER_URL ||
-    "https://khairien-dumbsound.herokuapp.com/api/v1" ||
+    "https://caca-dumbsound.herokuapp.com/api/v1" ||
     "http://localhost:5000/api/v1",
 });
 
