@@ -21,7 +21,7 @@ const CardLagu = ({item}) => {
                 </div>
             </div>
             <div className="row" style={{marginTop: "-15px"}}>
-                <p  style={{fontSize: "12px", fontWeight : "bold", paddingTop:"6px"}}></p>
+                <p  style={{fontSize: "12px", fontWeight : "bold", paddingTop:"6px"}}>{item.artis.name}</p>
             </div>
         </div>
 
