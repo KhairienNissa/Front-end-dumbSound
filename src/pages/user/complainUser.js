@@ -18,7 +18,7 @@ export default function Complain() {
 
     const [state, dispatch] = useContext(UserContext)
     useEffect(() =>{
-        socket = io('https://dumbsound-khairien.herokuapp.com', {
+        socket = io('https://khairien-dumbsound.herokuapp.com', {
             auth: {
                 token: localStorage.getItem("token")
             },
