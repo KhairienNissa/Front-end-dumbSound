@@ -164,7 +164,7 @@ function RegisterModal() {
               <Form.Control
                   className='inputText'
                   name= "phone"
-                  type="text"
+                  type="number"
                   placeholder="Phone" value={phone}
                   autoFocus onChange={HandleOnChange}/>
               </Form.Group>
