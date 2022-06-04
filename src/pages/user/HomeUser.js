@@ -77,12 +77,12 @@ useEffect(() => {
              <>
               {userTrans?.status === "success" &&
                <>
-                 <div className="mx-sm-5 mx-3 borra-4 d-flex gap-5 justify-content-center flex-1 flex-wrap">
+                 <div className="mx-sm-5 mx-3 borra-4 d-flex gap-4 justify-content-center flex-1 flex-wrap">
                {music?
                 music.map((item) => {
              return (
 
-            <a  onClick={() => setPlayMusic(item)} className="col-md-2 text-decoration-none text-white"> <CardLagu item={item}/> </a> 
+            <a  onClick={() => setPlayMusic(item)} className="col-md-2 mx-2 text-decoration-none text-white"> <CardLagu item={item}/> </a> 
              )
                  })
                :
