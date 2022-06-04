@@ -22,7 +22,6 @@ function AddMusic() {
     const optionArtis = async () => {
         try {
             const response = await API.get(`/artiss`)
-            console.log(response);
             setArtiss (response.data.data)
         } catch (error) {
             console.log(error);
@@ -39,9 +38,7 @@ function AddMusic() {
         attache: '',
         idArtis: ''
     })
-
-    const [preview, setPreview] = useState('')
-
+    
     const { title, year, thumbnail, attache, idArtis } = form
 
     const handleChange = (e) => {
