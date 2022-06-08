@@ -26,7 +26,7 @@ const [state, dispatch] = useContext(UserContext)
 
 
 useEffect(() =>{
-    socket = io('https://khairien-dumbsound.herokuapp.com', {
+    socket = io('https://caca-dumbsound.herokuapp.com', {
         auth: {
             token: localStorage.getItem('token')
         },
